@@ -1,28 +1,97 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Letter Animation</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosa Eterna</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #111;
+      color: white;
+      font-family: 'Georgia', serif;
+      text-align: center;
+    }
 
+    h1 {
+      font-size: 3em;
+      margin-top: 40px;
+    }
+
+    .container {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      margin: 30px auto;
+    }
+
+    .rose {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .dome {
+      position: absolute;
+      width: 300px;
+      height: 400px;
+      border-radius: 50% / 70%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      z-index: 3;
+    }
+
+    .base {
+      position: absolute;
+      bottom: 0;
+      width: 300px;
+      height: 40px;
+      background: #b2788d;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .petal {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #d94f7c;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      opacity: 0.9;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        top: 100px;
+        opacity: 1;
+      }
+      100% {
+        top: 350px;
+        opacity: 0;
+        transform: translateX(30px) rotate(360deg);
+      }
+    }
+  </style>
 </head>
 <body>
-<h3 class="fixed">Click the letters!</h3>
-<div class="word">
-	<span>A</span>
-	<span>L</span>
-	<span>E</span>
-	<span>X</span>
-	<span>D</span>
-	<span>E</span>
-	<span>V</span>
-</div>
- <!-- 
-Inspired by:
-    *Ig alexx_deev
-    * Instagram: https://www.instagram.com/alexx_deev?igsh=a3IyMnY0ZjdnZjJ0 
-    * https://www.instagram.com/alexx_deev?igsh=a3IyMnY0ZjdnZjJ0   
--->
-  <script  src="./script.js"></script>
+  <h1>For your princess</h1>
+  <div class="container">
+    <img src="5fd7b549-fc24-42a4-a622-51179184f215.png" alt="Rosa Eterna" class="rose" width="150">
+    <div class="dome"></div>
+    <div class="base"></div>
+
+    <!-- Pétalos cayendo -->
+    <div class="petal" style="left: 40%; animation-delay: 0s;"></div>
+    <div class="petal" style="left: 50%; animation-delay: 2s;"></div>
+    <div class="petal" style="left: 60%; animation-delay: 4s;"></div>
+    <div class="petal" style="left: 45%; animation-delay: 3s;"></div>
+    <div class="petal" style="left: 55%; animation-delay: 1s;"></div>
+  </div>
 </body>
 </html>
